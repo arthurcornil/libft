@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_new_striteri.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 13:16:16 by acornil           #+#    #+#             */
-/*   Updated: 2025/04/03 19:22:38 by arcornil         ###   ########.fr       */
+/*   Created: 2025/04/03 19:13:04 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 19:15:14 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_strtiteri(char *s, void (*f)(unsigned int, char *))
 {
-	t_list	*new;
+	unsigned int	i;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i ++;
+	}
 }
