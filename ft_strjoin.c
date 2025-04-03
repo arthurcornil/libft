@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 12:09:27 by acornil           #+#    #+#             */
-/*   Updated: 2022/01/26 13:59:34 by acornil          ###   ########.fr       */
+/*   Created: 2025/03/27 14:26:47 by arcornil          #+#    #+#             */
+/*   Updated: 2025/03/27 14:32:22 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,19 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	len;
-	char			*start_newstr;
-	char			*newstr;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*str;
 
 	if (!s1 || !s2)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	newstr = malloc(len + 1 * sizeof(char));
-	if (!newstr)
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	str = malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	start_newstr = newstr;
-	while (*s1)
-	{
-		*newstr = *s1;
-		newstr ++;
-		s1 ++;
-	}
-	while (*s2)
-	{
-		*newstr = *s2;
-		newstr ++;
-		s2 ++;
-	}
-	*newstr = '\0';
-	return (start_newstr);
+	ft_memcpy(str, s1, len_s1);
+	ft_memcpy(str + len_s1, s2, len_s2);
+	str[len_s1 + len_s2] = 0;
+	return (str);
 }

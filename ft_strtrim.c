@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 14:12:29 by acornil           #+#    #+#             */
-/*   Updated: 2022/02/07 01:47:54 by acornil          ###   ########.fr       */
+/*   Created: 2025/03/27 14:32:44 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 11:17:12 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	getend(char const *s1, char const *set)
 	i = 0;
 	while (i < len)
 	{
-		if (ft_strrchr(set, s1[len - i - 1]) == NULL)
+		if (ft_strchr(set, s1[len - i - 1]) == NULL)
 			return (len - i);
 		i ++;
 	}

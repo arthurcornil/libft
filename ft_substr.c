@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 14:33:35 by acornil           #+#    #+#             */
-/*   Updated: 2022/01/26 14:22:40 by acornil          ###   ########.fr       */
+/*   Created: 2025/03/27 14:16:25 by arcornil          #+#    #+#             */
+/*   Updated: 2025/03/27 14:22:08 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start ++;
 		i ++;
 	}
-	newstr[i] = '\0';
+	newstr[i] = 0;
 	return (newstr);
 }

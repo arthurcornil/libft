@@ -3,109 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 12:22:13 by acornil           #+#    #+#             */
-/*   Updated: 2022/02/04 15:55:35 by acornil          ###   ########.fr       */
+/*   Created: 2025/04/03 11:19:31 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 12:29:20 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	word_counter(char const *s, char c)
+static unsigned int	get_strs_len(char const *s, char c)
 {
-	unsigned int	nwords;
+	unsigned int	num_words;
+	bool			found_word;
 
-	nwords = 0;
+	num_words = 0;
+	found_word = false;
 	while (*s)
 	{
-		while (*s && *s == c)
+		while (*s != c && *s)
+		{
+			if (!found_word)
+				found_word = true;
 			s ++;
-		while (*s && *s != c)
+		}
+		if (found_word)
+			num_words ++;
+		while (*s == c && *s)
 			s ++;
-		if (*(s - 1) != c)
-			nwords ++;
 	}
-	return (nwords);
+	return (num_words);
 }
 
-static unsigned int	*len_counter(char const *s, char c, unsigned int words)
+static size_t	get_strlen(const char *s, char c)
 {
-	unsigned int	*lens;
-	unsigned int	i;
+	size_t	strlen;
 
-	if (words == 0)
-		return (NULL);
-	lens = malloc(words * sizeof(unsigned int));
-	if (!lens)
-		return (NULL);
-	i = 0;
-	while (*s)
-	{
-		lens[i] = 0;
-		while (*s && *s == c)
-			s ++;
-		while (*s && *s != c)
-		{
-			s ++;
-			lens[i]++;
-		}
-		while (*s && *s == c)
-			s ++;
-		i ++;
-	}
-	return (lens);
+	strlen = 0;
+	while (s[strlen] != c && s[strlen])
+		strlen ++;
+	return (strlen);
 }
 
-static void	copywords(char const *s, char c, unsigned int *tab, char **strs)
+static bool	copy_str(char const *s, char c, char **str, size_t *i)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	curr_strlen;
 
-	i = 0;
-	while (*s)
-	{
-		j = 0;
-		while (*s && *s == c)
-			s ++;
-		while (*s && j < tab[i])
-		{
-			strs[i][j] = *s;
-			s ++;
-			j ++;
-		}
-		if (*s || (!*s && *(s - 1) != c))
-		{
-			strs[i][j] = '\0';
-			i ++;
-		}
-	}
-	strs[i] = NULL;
+	while (s[*i] == c && s[*i])
+		(*i)++;
+	curr_strlen = get_strlen(&(s[*i]), c);
+	*str = (char *)malloc(sizeof(char) * (curr_strlen + 1));
+	if (!str)
+		return (0);
+	ft_strlcpy(*str, s + *i, curr_strlen + 1);
+	*i += curr_strlen;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char			**strs;
-	unsigned int	nwords;
-	unsigned int	*lenwords;
-	unsigned int	i;
+	unsigned int	strs_len;
+	size_t			i;
+	size_t			j;
 
-	if (!s)
-		return (NULL);
-	nwords = (word_counter(s, c));
-	strs = malloc((nwords + 1) * sizeof(char *));
+	strs_len = get_strs_len(s, c);
+	strs = (char **)malloc(sizeof(char *) * (strs_len + 1));
 	if (!strs)
 		return (NULL);
-	lenwords = len_counter(s, c, nwords);
 	i = 0;
-	while (i < nwords)
+	j = 0;
+	while (i < strs_len)
 	{
-		strs[i] = malloc(lenwords[i] + 1 * sizeof(char));
-		if (!strs[i])
+		if (!copy_str(s, c, &strs[i], &j))
 			return (NULL);
 		i ++;
 	}
-	copywords(s, c, lenwords, strs);
-	free(lenwords);
+	*(strs + i) = NULL;
 	return (strs);
 }
