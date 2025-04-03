@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 10:28:19 by acornil           #+#    #+#             */
-/*   Updated: 2022/01/26 11:31:40 by acornil          ###   ########.fr       */
+/*   Created: 2025/04/03 21:21:52 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 21:45:14 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*res;
-	t_list	*firstelem;
+	t_list	*new_lst;
+	t_list	*new_node;
+	void	*new_content;
 
-	firstelem = NULL;
+	if (!lst || !f)
+		return (NULL);
+	new_lst = NULL;
 	while (lst)
 	{
-		res = ft_lstnew((*f)(lst->content));
-		if (!res)
+		new_content = f(lst->content);
+		new_node = ft_lstnew(new_content);
+		if (!new_node)
 		{
-			ft_lstclear(&firstelem, del);
+			ft_lstclear(&new_lst, (*del));
 			return (NULL);
 		}
-		ft_lstadd_back(&firstelem, res);
+		ft_lstadd_back(&new_lst, new_node);
 		lst = lst->next;
 	}
-	return (firstelem);
+	return (new_lst);
 }

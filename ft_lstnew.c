@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 13:16:16 by acornil           #+#    #+#             */
-/*   Updated: 2025/04/03 19:22:38 by arcornil         ###   ########.fr       */
+/*   Created: 2025/04/03 20:52:38 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 20:54:47 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new -> content = content;
-	new -> next = NULL;
+	new->content = content;
+	new->next = NULL;
 	return (new);
 }

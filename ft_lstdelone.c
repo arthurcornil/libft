@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 17:39:45 by acornil           #+#    #+#             */
-/*   Updated: 2022/01/13 18:13:26 by acornil          ###   ########.fr       */
+/*   Created: 2025/04/03 21:08:58 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 21:10:25 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst -> content);
+	del(lst->content);
 	free(lst);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 14:01:47 by acornil           #+#    #+#             */
-/*   Updated: 2022/01/19 17:00:44 by acornil          ###   ########.fr       */
+/*   Created: 2025/04/03 20:58:50 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 21:00:43 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int	num_nodes;
 
-	if (!lst)
-		return (0);
-	i = 1;
-	while (lst -> next)
+	num_nodes = 0;
+	while (lst)
 	{
-		lst = lst -> next;
-		i ++;
+		num_nodes ++;
+		lst = lst->next;
 	}
-	return (i);
+	return (num_nodes);
 }
