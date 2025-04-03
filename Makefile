@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: acornil <acornil@student.s19.be>           +#+  +:+       +#+         #
+#    By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/07 01:37:04 by acornil           #+#    #+#              #
-#    Updated: 2022/02/07 01:37:09 by acornil          ###   ########.fr        #
+#    Created: 2025/04/03 21:49:47 by arcornil          #+#    #+#              #
+#    Updated: 2025/04/03 21:50:16 by arcornil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc 
 
-CLFAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror
 
 RM=rm -f
 
@@ -57,15 +57,15 @@ OBJS=${SRCS:.c=.o}
 
 NAME=libft.a
 
-BONUS= ft_lstnew.c\
-	ft_lstadd_front.c\
-	ft_lstsize.o\
-	ft_lstlast.c\
-	ft_lstadd_back.c\
-	ft_lstdelone.c\
-	ft_lstclear.c\
-	ft_lstiter.c\
-	ft_lstmap.c
+BONUS=ft_lstnew.c\
+	  ft_lstadd_front.c\
+	  ft_lstsize.o\
+	  ft_lstlast.c\
+	  ft_lstadd_back.c\
+	  ft_lstdelone.c\
+	  ft_lstclear.c\
+	  ft_lstiter.c\
+	  ft_lstmap.c
 
 B_OBJS= ${BONUS:.c=.o}
 
