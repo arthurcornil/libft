@@ -49,6 +49,7 @@ SRCS=ft_atoi.c\
 	 ft_strjoin.c\
 	 ft_itoa.c\
 	 ft_strmapi.c\
+	 ft_striteri.c
 
 OBJS=${SRCS:.c=.o}
 
@@ -81,9 +82,5 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
 
 .PHONY: fclean clean re bonus

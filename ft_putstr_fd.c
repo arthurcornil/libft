@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 19:17:17 by arcornil          #+#    #+#             */
-/*   Updated: 2025/04/03 19:18:27 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:56:18 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s == NULL)
+	if (!s)
 		return ;
 	write (fd, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 /*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:08:36 by acornil           #+#    #+#             */
-/*   Updated: 2025/04/03 19:18:44 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:56:32 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	ft_putstr_fd(s, fd);
 	write (fd, "\n", 1);
 }
