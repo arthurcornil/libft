@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 08:07:29 by arcornil          #+#    #+#             */
-/*   Updated: 2025/03/27 10:54:43 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 13:25:52 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*s;
 	size_t			i;
 
-	if (!dst || !src)
+	if (!dst && !src)
 		return (NULL);
 	if (len == 0)
 		return (dst);

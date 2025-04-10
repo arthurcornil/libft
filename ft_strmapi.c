@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 18:49:47 by arcornil          #+#    #+#             */
-/*   Updated: 2025/04/03 19:06:44 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:17:40 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	slen;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * (slen + 1));
 	if (!str)

@@ -6,7 +6,7 @@
 #    By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/03 21:49:47 by arcornil          #+#    #+#              #
-#    Updated: 2025/04/03 21:50:16 by arcornil         ###   ########.fr        #
+#    Updated: 2025/04/10 15:18:40 by arcornil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS=ft_atoi.c\
 	 ft_memset.c\
 	 ft_memmove.c\
 	 ft_split.c\
-	 ft_strchr.c\
 	 ft_strdup.c\
 	 ft_strlcat.c\
 	 ft_strlcpy.c\
@@ -50,8 +49,6 @@ SRCS=ft_atoi.c\
 	 ft_strjoin.c\
 	 ft_itoa.c\
 	 ft_strmapi.c\
-	 ft_strtrim.c\
-	 ft_striteri.c
 
 OBJS=${SRCS:.c=.o}
 
@@ -84,5 +81,9 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
 
 .PHONY: fclean clean re bonus

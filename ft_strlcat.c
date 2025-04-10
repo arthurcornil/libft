@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 08:31:59 by arcornil          #+#    #+#             */
-/*   Updated: 2025/03/27 10:29:19 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 13:49:45 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dest_len;
 	size_t	src_len;
 
-	dest_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (!dst && !dstsize)
+		return (src_len);
+	dest_len = ft_strlen(dst);
 	if (dstsize <= dest_len)
 		return (src_len + dstsize);
 	i = 0;

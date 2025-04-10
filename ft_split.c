@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 11:19:31 by arcornil          #+#    #+#             */
-/*   Updated: 2025/04/03 12:29:20 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:17:12 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 	size_t			i;
 	size_t			j;
 
+	if (!s)
+		return (NULL);
 	strs_len = get_strs_len(s, c);
 	strs = (char **)malloc(sizeof(char *) * (strs_len + 1));
 	if (!strs)

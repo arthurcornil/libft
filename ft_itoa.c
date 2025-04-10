@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 14:54:43 by arcornil          #+#    #+#             */
-/*   Updated: 2025/04/03 18:50:56 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:15:53 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char	*ft_itoa(int n)
 	if (nbr < 0)
 		i = 1;
 	str = init_str(num_digits, i, nbr);
+	if (!str)
+		return (NULL);
 	if (nbr < 0)
 		nbr = -nbr;
 	if (!str)

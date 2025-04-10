@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 10:01:38 by arcornil          #+#    #+#             */
-/*   Updated: 2025/03/27 10:05:00 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:13:07 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (!*needle)
+	if (!*needle || (!haystack && !len))
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{

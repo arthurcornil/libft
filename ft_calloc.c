@@ -6,12 +6,12 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 10:56:41 by arcornil          #+#    #+#             */
-/*   Updated: 2025/03/27 10:57:55 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:51:34 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
+#include <stdint.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
