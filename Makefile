@@ -72,7 +72,7 @@ all: ${NAME}
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} $?
 
-bonus: ${B_OBJS} ${OBJS}
+bonus: ${B_OBJS}
 	ar rcs ${NAME} $?
 
 clean:
