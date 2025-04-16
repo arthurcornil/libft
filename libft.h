@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
+# include <stdint.h>
 # include <stdbool.h>
 
 typedef struct s_list
@@ -25,7 +25,7 @@ typedef struct s_list
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
-void			*ft_calloc(size_t count, size_t size);
+void			*ft_calloc(size_t nmemb, size_t size);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);

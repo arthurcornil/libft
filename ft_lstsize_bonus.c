@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_striteri.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/03 19:13:04 by arcornil          #+#    #+#             */
-/*   Updated: 2025/04/03 19:15:14 by arcornil         ###   ########.fr       */
+/*   Created: 2025/04/03 20:58:50 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/03 21:00:43 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strtiteri(char *s, void (*f)(unsigned int, char *))
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
+	int	num_nodes;
 
-	i = 0;
-	while (s[i])
+	num_nodes = 0;
+	while (lst)
 	{
-		f(i, &s[i]);
-		i ++;
+		num_nodes ++;
+		lst = lst->next;
 	}
+	return (num_nodes);
 }

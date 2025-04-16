@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornil <acornil@student.s19.be>           +#+  +:+       +#+        */
+/*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 10:59:41 by acornil           #+#    #+#             */
-/*   Updated: 2025/03/27 10:22:45 by arcornil         ###   ########.fr       */
+/*   Created: 2025/04/14 20:32:37 by arcornil          #+#    #+#             */
+/*   Updated: 2025/04/14 20:37:12 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdbool.h>
 
 int	ft_atoi(const char *str)
 {
