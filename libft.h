@@ -6,7 +6,7 @@
 /*   By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 21:46:45 by arcornil          #+#    #+#             */
-/*   Updated: 2025/04/10 13:12:43 by arcornil         ###   ########.fr       */
+/*   Updated: 2025/04/18 17:44:45 by arcornil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,8 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void*(*f)(void *), void(*del)(void *));
+void			*ft_malloc(size_t count);
+void			*ft_realloc(void *ptr, size_t size);
+void			ft_free(void *ptr);
 
 #endif

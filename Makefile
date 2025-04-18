@@ -6,7 +6,7 @@
 #    By: arcornil <arcornil@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/03 21:49:47 by arcornil          #+#    #+#              #
-#    Updated: 2025/04/10 15:18:40 by arcornil         ###   ########.fr        #
+#    Updated: 2025/04/18 17:01:32 by arcornil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,10 @@ SRCS=ft_atoi.c\
 	 ft_strjoin.c\
 	 ft_itoa.c\
 	 ft_strmapi.c\
-	 ft_striteri.c
+	 ft_striteri.c\
+	 ft_malloc.c\
+	 ft_realloc.c\
+	 ft_free.c
 
 OBJS=${SRCS:.c=.o}
 
