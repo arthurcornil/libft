@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_malloc(size_t count)
 {
@@ -21,6 +20,5 @@ void	*ft_malloc(size_t count)
 	if (!alloc_bytes)
 		return (NULL);
 	*alloc_bytes = count;
-	printf("from malloc: %zu\n", *alloc_bytes);
 	return ((void *)(alloc_bytes + 1));
 }
