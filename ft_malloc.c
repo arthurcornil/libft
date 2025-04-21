@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-void			*ft_malloc(size_t count)
+void	*ft_malloc(size_t count)
 {
 	size_t	*alloc_bytes;
 
